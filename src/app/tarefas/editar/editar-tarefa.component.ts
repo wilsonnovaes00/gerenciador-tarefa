@@ -12,6 +12,7 @@ import { TarefaService, Tarefa } from '../shared/';
 export class EditarTarefaComponent implements OnInit {
 
   @ViewChild('formTarefa') formTarefa: NgForm;
+  tarefa: Tarefa;
 
   constructor(private tarefaService: TarefaService, private route: ActivatedRoute, private router: Router) { }
 
@@ -20,4 +21,10 @@ export class EditarTarefaComponent implements OnInit {
     this.tarefa = this.tarefaService.getById(id);
   }
 
+  update() : void {
+    if (this.formTarefa.form.valid){
+      this.tarefaService.update(this.tarefa);
+      this.router.navigate(['/tarefas']);
+    }
+  }
 }
