@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { TarefaService } from './shared';
 import { ListarTarefaComponent } from './listar';
-import { CadastrarTarefaComponent } from './cadastrar-tarefa/cadastrar-tarefa.component';
+import { CadastrarTarefaComponent } from './cadastrar';
 
 
 @NgModule({
