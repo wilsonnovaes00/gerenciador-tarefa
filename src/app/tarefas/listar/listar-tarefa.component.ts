@@ -25,4 +25,11 @@ export class ListarTarefaComponent implements OnInit {
       this.tarefas = this.getAll();
     }
   }
+
+  ChangeStatus(tarefa: Tarefa): void {
+    if (confirm('Deseja atualiza a tarefa"' + tarefa.nome + '"?')) {
+      this.tarefaService.ChangeStatus(tarefa.id);
+      this.tarefas = this.getAll();
+    }
+  }
 }
